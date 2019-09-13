@@ -3,6 +3,8 @@ const next = require('next')
 const { join } = require('path')
 const port = parseInt(process.env.PORT || '3000', 10)
 const dev = process.env.NODE_ENV !== 'production'
+const nextI18NextMiddleware = require('next-i18next/middleware').default
+const nextI18next = require('./i18n').default
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -19,6 +21,8 @@ app.prepare()
       return handle(req, res)
     }
   })
+
+  server.use(nextI18NextMiddleware(nextI18next))
 
   server.listen(port || '3000', (err) => {
     if (err) throw err

@@ -3,6 +3,8 @@ import { Layout } from '@components/Layout'
 import Head from 'next/head'
 import Link from 'next/link'
 import { withRouter, SingletonRouter } from 'next/router'
+import { WithTranslation } from 'next-i18next'
+import { withTranslation } from '@server/i18n'
 
 interface IState {}
 
@@ -10,23 +12,25 @@ interface IStateProps {
   router: SingletonRouter
 }
 
-class Index extends React.Component<IStateProps, IState> {
+class Index extends React.Component<IStateProps & WithTranslation, IState> {
   componentDidMount() {
   }
 
   render() {
+    const { t } = this.props
+
     return (
       <Layout>
         <Head>
           <title>My page title</title>
         </Head>
         <div>Home</div>
-        <Link href="/listing">
-          <a>Listings</a>
+        <Link href="/listing" prefetch={false}>
+          <a>{t('title')}</a>
         </Link>
       </Layout>
     )
   }
 }
 
-export default withRouter(Index)
+export default withTranslation('common')(withRouter(Index))

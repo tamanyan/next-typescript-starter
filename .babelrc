@@ -7,7 +7,8 @@
         "root": ["./"],
         "alias": {
           "@components": "./src/components",
-          "@constants": "./src/constants"
+          "@constants": "./src/constants",
+          "@server": "./server"
         }
       }
     ]

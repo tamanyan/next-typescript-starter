@@ -6,7 +6,9 @@
       "@components/*": ["./src/components/*"],
       "@components": ["./src/components"],
       "@constants/*": ["./src/constants/*"],
-      "@constants": ["./src/constants"]
+      "@constants": ["./src/constants"],
+      "@server/*": ["./server/*"],
+      "@server": ["./server"]
     },
     "lib": [
       "dom",

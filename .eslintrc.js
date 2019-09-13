@@ -48,7 +48,7 @@ parser: '@typescript-eslint/parser',
     '@typescript-eslint/restrict-plus-operands': 'error',
     '@typescript-eslint/type-annotation-spacing': 'error',
     '@typescript-eslint/unified-signatures': 'error',
-    complexity: ['error', { max: 5 }],
+    complexity: ['error', { max: 3 }],
     'max-depth': ['error', { max: 4 }],
     'prefer-const': [
       'error',

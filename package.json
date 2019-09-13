@@ -11,11 +11,12 @@
     "bundlesize": "bundlesize"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "next": "9.0.5",
+    "next-i18next": "^1.2.0",
     "next-offline": "^4.0.5",
     "react": "16.9.0",
-    "react-dom": "16.9.0",
-    "express": "^4.17.1"
+    "react-dom": "16.9.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
