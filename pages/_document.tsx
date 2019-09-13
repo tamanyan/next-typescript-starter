@@ -27,7 +27,9 @@ export default class extends Document {
           <meta name="twitter:description" content={SITE_DESCRIPTION} />
           <meta property="twitter:image" content={SITE_IMAGE} />
           <meta name="format-detection" content="telephone=no, address=no, email=no" />
-          <link rel="shortcut icon" href="/static/favicon.ico" />
+          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/static/images/icon/icon-180.png"></link>
+          <link rel="shortcut icon" href="/static/images/icon/favicon.ico" />
           <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.includes,String.prototype.includes,Array.prototype.findIndex,Object.entries"></script>
           {!DEV && FB_TRACKING_ID && (
             <script
