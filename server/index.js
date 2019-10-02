@@ -12,6 +12,8 @@ app.prepare()
 .then(() => {
   const server = express()
 
+  server.use(nextI18NextMiddleware(nextI18next))
+
   server.get('*', (req, res) => {
     // handle GET request to /service-worker.js
     if (req.path === '/service-worker.js') {
@@ -21,8 +23,6 @@ app.prepare()
       return handle(req, res)
     }
   })
-
-  server.use(nextI18NextMiddleware(nextI18next))
 
   server.listen(port || '3000', (err) => {
     if (err) throw err

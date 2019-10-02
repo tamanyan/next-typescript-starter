@@ -11,6 +11,7 @@ class Error extends React.Component<Props> {
   static getInitialProps({ res, err }: any) {
     const statusCode = res ? res.statusCode : err ? err.statusCode : null
     return {
+      namespacesRequired: ['common'],
       statusCode
     }
   }

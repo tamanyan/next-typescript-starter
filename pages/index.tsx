@@ -13,7 +13,10 @@ interface IStateProps {
 }
 
 class Index extends React.Component<IStateProps & WithTranslation, IState> {
-  componentDidMount() {
+  static async getInitialProps() {
+    return {
+      namespacesRequired: ['common']
+    }
   }
 
   render() {

@@ -1,8 +1,9 @@
 // import '../styles/index.sass'
 
-import App, { Container, AppContext } from 'next/app'
-import Head from 'next/head'
+import App from 'next/app'
+// import Head from 'next/head'
 // import { Provider } from 'react-redux'
+import { appWithTranslation } from '@server/i18n'
 import React from 'react'
 // import { Store } from 'redux'
 // import { WithTranslation } from 'next-i18next'
@@ -17,24 +18,6 @@ import React from 'react'
 // }
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }: AppContext) {
-    const pageProps = Component.getInitialProps
-      ? await Component.getInitialProps(ctx)
-      : {}
-
-    // if (ctx.req) {
-    //   const i18n = (ctx.req as any).i18n as i18next.i18n
-    //   const lang = (ctx.query.lng as string) || i18n.language
-
-    //   await i18n.changeLanguage(lang)
-    // }
-
-    console.log('initial myapp')
-
-    return {
-      pageProps
-    }
-  }
   render() {
     const { Component, pageProps } = this.props
     return (
@@ -43,4 +26,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
